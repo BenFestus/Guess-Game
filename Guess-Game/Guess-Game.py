@@ -14,6 +14,7 @@ def check_guess(guess, answer):
             break
         else:
             print('INCORRECT')
+            #Add 1 to the number of guesses
             guesses = guesses + 1
             guess = input('Try again - ')
         
