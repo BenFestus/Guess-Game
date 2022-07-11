@@ -18,6 +18,7 @@ def check_guess(guess, answer):
             guess = input('Try again - ')
         
     if guesses == 3:
+        #Print the correct answer when user has guessed three times
         print('The correct answer is', answer)
    
 
