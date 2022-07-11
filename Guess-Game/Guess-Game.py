@@ -25,7 +25,9 @@ score = 0
 
 print('WELCOME TO GUESS GAME')
 
+#Ask user to guess
 guess = input('What is the largest animal? - ')
+#Check if guess is correct
 check_guess(guess, 'blue whale')
 
 guess = input('What is the fastest land animal? - ')
