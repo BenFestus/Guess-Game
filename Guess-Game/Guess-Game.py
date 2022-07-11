@@ -5,7 +5,7 @@ def check_guess(guess, answer):
     guesses = 0
 
     #As long as user is still guessing and guesses is less than 2
-    while still_guessing and guesses < 3:
+    while still_guessing and guesses < 2:
         if guess.lower() == answer.lower():
             #Print correct answer when guess is correct
             print('Correct answer')
@@ -23,7 +23,7 @@ def check_guess(guess, answer):
             #Add 1 to the number of guesses 
             guesses = guesses +  1
 
-    if guesses == 3:
+    if guesses == 2:
         #Print the correct answer when user has guessed two more times and is wrong
         print('The correct answer is', answer)
 
