@@ -1,3 +1,4 @@
+"""GUESS GAME"""
 #Function that checks if guess is correct
 def check_guess(guess, answer):
     global score
