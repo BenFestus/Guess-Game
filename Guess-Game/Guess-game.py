@@ -1,5 +1,5 @@
 """GUESS GAME"""
-#Function that checks if user guess is correct
+#Function that checks if user's guess is correct
 def check_guess(guess, answer):
     global score
     still_guessing = True
