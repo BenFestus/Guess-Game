@@ -1,11 +1,10 @@
 """GUESS GAME"""
-#Function that checks if guess is correct
+#Function that checks if user guess is correct
 def check_guess(guess, answer):
     global score
     still_guessing = True
     guesses = 0
 
-    #As long as user is still guessing and guesses is less than 2
     while still_guessing and guesses < 2:
         if guess.lower() == answer.lower():
             #Print correct answer when guess is correct
