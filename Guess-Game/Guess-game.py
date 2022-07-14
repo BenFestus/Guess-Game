@@ -1,68 +1,60 @@
-import sys
-
-#Function checks if guess made by use is correct
+"""GUESS GAME"""
+#Function that checks if guess is correct
 def check_guess(guess, answer):
     global score
     still_guessing = True
     guesses = 0
 
-    #After initial guess, user has two more chances 
+    #As long as user is still guessing and guesses is less than 2
     while still_guessing and guesses < 2:
-        #If guess is same as answer
         if guess.lower() == answer.lower():
-            print('Correct Guess! \n')
-            score = score + 1
-            still_guessing = False
-        #If guess is incorrect
-        else:
-            print('Incorrect Guess!')
-            guess = input('Guess again -- ')
+            #Print correct answer when guess is correct
+            print('Correct answer')
+            #Add 1 to score
+            score = score + 1 
+            #Add 1 to guesses
             guesses = guesses + 1
-    
-    #Displays the correct answer if user has guessed two more times and is still incorrect
+            #Since user is correct, still_guessing is False
+            still_guessing = False
+            break
+        else:
+            #Print incorrect when guess is incorrect
+            print('Incorrect guess')
+            guess = input('Try Again! - ')
+            #Add 1 to the number of guesses 
+            guesses = guesses +  1
+
     if guesses == 2:
-        print('The answer is', answer, '\n')
-
-#Function stores the list of questions
-def get_questions():
-    print('You have three chances to guess the correct answer. Goodluck👍 \n')
-
-    guess1 = input('What is the name of the largest oceanic mammal? -- ')
-    #Compare user's guess with answer using the check guess function
-    check_guess(guess1, 'blue whale')
-
-    guess2 = input('How many continents are there on Earth? -- ')
-    check_guess(guess2, '7')
-
-    guess3 = input('Which of these is a fish? \n A. Shark \n B. Whale \n C. Cat \n D. Orangutan \n Type A, B, C, D -- ')
-    check_guess(guess3, 'A')
-
-    #Display's user's score
-    print('Your score is', score)
+        #Print the correct answer when user has guessed two more times and is wrong
+        print('The correct answer is', answer)
 
 
 score = 0
 
-print('\t WELCOME TO GUESS GAME 🤩\n')
-print('\t 1. START GAME \n \
-\t 2. EXIT \n ')
+print('WELCOME TO GUESS GAME')
 
-while True:
+guess1 = input('What is the capital of Nigeria? - ')
+check_guess(guess1, 'Abuja')
+print()
 
-    user_response = input('Type 1 to start and 2 to exit -- ')
-    if user_response == '1':
-        #Calls get questions fuction if user wants to start game
-        get_questions()
-        
-        #Ask if user wants to restart
-        restart = input('Do you want to restart? Type y/n -- ')
-        print()
-        if restart == 'y':
-            #Calls get questions function if user chooses to restart
-            get_questions()
-        else:
-            sys.exit()
+guess2 = input('What is the largest ocean mammal? - ')
+check_guess(guess2, 'blue whale')
+print()
 
-    else:
-        sys.exit()
+guess3 = input('How many continents are there presently? - ')
+check_guess(guess3, '7')
+print()
 
+guess4 = input('What is the slowest land animal? - ')
+check_guess(guess4, 'snail')
+print()
+
+guess5 = input('How many moons does Earth have? - ')
+check_guess(guess5, '1')
+print()
+
+guess6 = input('What is the fastest land animal? - ')
+check_guess(guess6, 'cheetah')
+print()
+
+print('Your score is', score)
